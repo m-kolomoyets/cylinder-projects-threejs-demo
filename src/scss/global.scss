@@ -1,40 +1,203 @@
 @font-face {
-  font-family: 'Roboto';
-  src: local('Roboto-Thin'),
-    url('../assets/fonts/Roboto-Thin.woff2') format('woff2'),
-    url('../assets/fonts/Roboto-Thin.woff') format('woff');
-  font-weight: 300;
-  font-display: swap;
+    font-family: 'Roboto';
+    src:
+        local('Roboto-Thin'),
+        url('../assets/fonts/Roboto-Thin.woff2') format('woff2'),
+        url('../assets/fonts/Roboto-Thin.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: local('Roboto-Regular'),
-    url('../assets/fonts/Roboto-Regular.woff2') format('woff2'),
-    url('../assets/fonts/Roboto-Regular.woff') format('woff');
-  font-weight: 400;
-  font-display: swap;
+    font-family: 'Roboto';
+    src:
+        local('Roboto-Regular'),
+        url('../assets/fonts/Roboto-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Roboto-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: local('Roboto-Medium'),
-    url('../assets/fonts/Roboto-Medium.woff2') format('woff2'),
-    url('../assets/fonts/Roboto-Medium.woff') format('woff');
-  font-weight: 600;
-  font-display: swap;
+    font-family: 'Roboto';
+    src:
+        local('Roboto-Medium'),
+        url('../assets/fonts/Roboto-Medium.woff2') format('woff2'),
+        url('../assets/fonts/Roboto-Medium.woff') format('woff');
+    font-weight: 600;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: local('Roboto-Bold'),
-    url('../assets/fonts/Roboto-Bold.woff2') format('woff2'),
-    url('../assets/fonts/Roboto-Bold.woff') format('woff');
-  font-weight: 900;
-  font-display: swap;
+    font-family: 'Roboto';
+    src:
+        local('Roboto-Bold'),
+        url('../assets/fonts/Roboto-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Roboto-Bold.woff') format('woff');
+    font-weight: 900;
+    font-display: swap;
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+//
+
+a {
+    color: rgb(255, 255, 255);
+}
+
+#menu {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.element {
+    width: 520px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f78040;
+    transition: all 0.5s ease;
+    border-radius: 1.5rem;
+    border: 0.3rem solid #f9ad84;
+    padding: 2rem;
+    color: #000000;
+}
+
+.element:hover {
+    background-color: #ff9822;
+    width: 700px;
+    height: 450px;
+}
+
+.element .number {
+    font-size: 0.75rem;
+}
+
+.element .symbol {
+    font-size: 3.75rem;
+    font-weight: bold;
+}
+
+.element .details {
+    font-size: 0.75rem;
+}
+
+#container {
+    background-color: #ffffff;
+}
+
+#container div:first-child {
+    position: sticky;
+    top: 0;
+}
+
+.instruction {
+    position: fixed;
+    bottom: 0;
+    z-index: 99999;
+}
+
+.instruction {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(253, 218, 137, 0.2);
+    padding: 0.5rem 0;
+    color: #000000;
+}
+
+.instruction p {
+    padding: 0 1rem;
+}
+
+.space {
+    height: 100vh;
+    width: 100vw;
+    z-index: -999;
+}
+
+.control {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 119, 0, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 6.25rem;
+    height: 6.25rem;
+    font-size: 3rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    color: #000000;
+    z-index: 99999;
+    transition: background-color 0.2s ease;
+}
+
+.control#left {
+    left: 1rem;
+}
+
+.control#right {
+    right: 2rem;
+}
+
+.controls .control:hover {
+    background-color: rgba(253, 218, 137, 0.3);
+}
+
+.controls .control:active {
+    background-color: rgba(253, 218, 137, 0.4);
+}
+
+#loader {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999999;
+}
+
+#loader .loader__counter {
+    color: #ffffff;
+}
+
+.loader__overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: stretch;
+}
+
+.loader__counter {
+    position: fixed;
+    width: calc(100% - 4rem);
+    height: calc(100% - 2rem);
+    z-index: 99999;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-family: sans-serif;
+    font-weight: 700;
+    padding: 2rem 1rem;
+    color: #ffffff;
+}
+
+.counter__percent {
+    position: relative;
+    font-size: 6rem;
+}
+
+.loader__bar {
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
